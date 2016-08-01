@@ -3,13 +3,11 @@ from pprint import pprint
 
 def run():
     choices = []
-    # jsonResp = str(urllib.request.urlopen("https://raw.githubusercontent.com/xcoan/GenesisGame/json/client/src/story.json").read())
 
     with open('story.json') as datafile:
         story = json.load(datafile)
 
     days = story['days']
-
     for day in days:
         header = day['head']
         print('\n\n' + header + '...\n---------------------------------------')
