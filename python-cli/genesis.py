@@ -1,21 +1,13 @@
-import json,requests,urllib.request
+import json
 from pprint import pprint
 
 def run():
     choices = []
-    #jsonurl = requests.get("https://raw.githubusercontent.com/xcoan/GenesisGame/json/client/src/story.json")
-    jsonResp = str(urllib.request.urlopen("https://raw.githubusercontent.com/xcoan/GenesisGame/json/client/src/story.json").read())
-
-    #print("[Info]  ", jsonurl)
 
     with open('story.json') as datafile:
         story = json.load(datafile)
 
-    #bstory = json.loads("story.json")
-    #astory = json.loads(jsonResp)
-
     days = story['days']
-    
     for day in days:
         header = day['head']
         print('\n\n' + header + '...\n---------------------------------------')
