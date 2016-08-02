@@ -11,14 +11,24 @@
     <a-asset-item id="mountain" src="assets/mountain/obj.dae"></a-asset-item>
     <img id="mtn-texture" src="assets/mountain/texture.jpg" />
   </a-assets>
+
   <a-scene>
+    <a-image position="0 0 -5" src="logo.png" scale="10 10 10" look-at="[camera]"></a-image>
+
     <a-collada-model
         src="#mountain"
         position="0 0 -10"
         material="src: #mtn-texture"
     ></a-collada-model>
+
     <a-light type="ambient" color="#FFF"></a-light>
+
+    <a-entity position="0 1.8 5">
+      <a-entity camera look-controls></a-entity>
+    </a-entity>
+
     <a-sky color="#000"></a-sky>
   </a-scene>
+  
 </body>
 </html>
