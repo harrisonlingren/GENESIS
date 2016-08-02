@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <title>A-frame test</title>
   <script src="https://aframe.io/releases/latest/aframe.min.js"></script>
-  <script src="texture.js"></script>
 </head>
 
 <body>
@@ -13,12 +12,13 @@
     <img id="mtn-texture" src="assets/mountain/texture.jpg" />
   </a-assets>
   <a-scene>
-    <a-sky color="#000"></a-sky>
     <a-collada-model
         src="#mountain"
         position="0 0 -10"
         material="src: #mtn-texture"
     ></a-collada-model>
+    <a-light type="ambient" color="#FFF"></a-light>
+    <a-sky color="#000"></a-sky>
   </a-scene>
 </body>
 </html>
