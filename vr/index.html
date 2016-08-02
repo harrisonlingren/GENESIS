@@ -8,8 +8,17 @@
 </head>
 
 <body>
+  <a-assets>
+    <a-asset-item id="mountain" src="assets/mountain/obj.dae"></a-asset-item>
+    <img id="mtn-texture" src="assets/mountain/texture.jpg" />
+  </a-assets>
   <a-scene>
     <a-sky color="#000"></a-sky>
+    <a-collada-model
+        src="#mountain"
+        position="0 0 -10"
+        material="src: #mtn-texture"
+    ></a-collada-model>
   </a-scene>
 </body>
 </html>
