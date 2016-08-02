@@ -25,9 +25,9 @@ def run():
 
             print('Options:')
             print('  1: ' + dayOptions[0]['text'] + '\n  2: ' + dayOptions[1]['text'] + '\n  3: '+ dayOptions[2]['text'])
-            choice = int(input('> '))
+            choice = int(input('\n> '))
             choices.append(choice)
-            print('[Info]  Updated choice array: ', choices)
+            #print('[Info]  Updated choice array: ', choices)
 
         print('\n', day['foot'])
 

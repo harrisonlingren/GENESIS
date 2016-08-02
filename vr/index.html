@@ -4,12 +4,33 @@
   <meta charset="utf-8" />
   <title>A-frame test</title>
   <script src="https://aframe.io/releases/latest/aframe.min.js"></script>
-  <script src="texture.js"></script>
 </head>
 
 <body>
+  <a-assets>
+    <a-asset-item id="mountain" src="assets/mountain/obj.dae"></a-asset-item>
+    <img id="mtn-texture" src="assets/mountain/texture.jpg" />
+  </a-assets>
+
   <a-scene>
+    <!--<a-image position="0 5 -5" src="logo.png" scale="6 4 2" look-at="[camera]"></a-image>-->
+    <a-image position="0 -10 0" src="logo.png" scale="1.5 .5 .25" look-at="[camera]"></a-image>
+
+    <a-collada-model
+        src="#mountain"
+        position="0 -10 0"
+        material="shader: standard; src: #mtn-texture"
+        opacity="1"
+    ></a-collada-model>
+
+    <a-light type="ambient" color="#FFF"></a-light>
+
+    <a-entity position="0 1.8 5">
+      <a-entity camera look-controls></a-entity>
+    </a-entity>
+
     <a-sky color="#000"></a-sky>
   </a-scene>
+
 </body>
 </html>
