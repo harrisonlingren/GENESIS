@@ -4,26 +4,48 @@
   <meta charset="utf-8" />
   <title>A-frame test</title>
   <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+  <script src="js/aframe-mesh-ui.bundle.js"></script>
+  <script src="js/aframe-sky-gradient.js"></script>
 </head>
 
 <body>
-  <a-scene>
+  <a-scene antialias="true">
     <a-assets>
       <a-asset-item id="mountain" src="assets/mountain/obj.dae"></a-asset-item>
     </a-assets>
 
     <!--<a-image position="0 5 -5" src="logo.png" scale="6 4 2" look-at="[camera]"></a-image>-->
-    <a-image position="0 -3 0" src="logo.png" scale="1.5 .5 .25" look-at="[camera]"></a-image>
-    <a-collada-model src="#mountain" position="0 -10 0"></a-collada-model>
+    <a-image position="2.5 -3 -4.5" src="logo.png" scale="1.5 1 0.25" look-at="[camera]"></a-image>
+    <a-collada-model src="#mountain" position="0 -12 0"></a-collada-model>
 
     <a-entity position="0 1.8 5">
       <a-entity camera look-controls></a-entity>
     </a-entity>
 
-    <a-entity geometry="primitive: sphere" opacity=".75" material="shader: flat; color: #F5EEB8" position="5 7.5 0"></a-sphere>
-    <a-light type="spot" color="white" position="5 7.5 0"></a-light>
 
-    <a-sky color="#000"></a-sky>
+    <!--Sun-->
+    <a-light type="spot" color="white" position="0 7.5 0"></a-light>
+    <a-entity geometry="primitive: sphere" material="shader: flat; color: #F5EEB8;" position="5 7.5 0"></a-sphere>
+
+
+    <!--Environment tests
+    <a-light type="point" color="white" position="200 0 0"></a-light>
+    <a-entity geometry="primitive: sphere" material="shader: flat; color: #000" position="200 0 0"></a-sphere>
+
+    <a-light type="point" color="white" position="0 0 200"></a-light>
+    <a-entity geometry="primitive: sphere" material="shader: flat; color: #000" position="0 0 200"></a-sphere>
+
+    <a-light type="point" color="white" position="-200 0 0"></a-light>
+    <a-entity geometry="primitive: sphere" material="shader: flat; color: #000" position="-200 0 0"></a-sphere>
+
+    <a-light type="point" color="white" position="0 0 -200"></a-light>
+    <a-entity geometry="primitive: sphere" material="shader: flat; color: #000" position="0 0 -200"></a-sphere>
+
+    <a-entity sky-gradient="colors: #64B4F7 #88C6F9 #ACD8FC #D1EAFF"></a-entity>-->
+    <!--<a-light type="ambient" color="white"></a-light>
+    <a-sky color="#64B4F7"></a-sky>-->
+    <a-sky color="black"></a-sky>
+
   </a-scene>
 
 </body>
