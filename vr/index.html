@@ -4,10 +4,12 @@
   <meta charset="utf-8" />
   <title>A-frame test</title>
   <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+  <script src="js/aframe-mesh-ui.bundle.js"></script>
+  <script src="js/aframe-sky-gradient.js"></script>
 </head>
 
 <body>
-  <a-scene>
+  <a-scene antialias="true">
     <a-assets>
       <a-asset-item id="mountain" src="assets/mountain/obj.dae"></a-asset-item>
     </a-assets>
@@ -23,8 +25,9 @@
     <a-entity geometry="primitive: sphere" opacity=".75" material="shader: flat; color: #F5EEB8" position="5 7.5 0"></a-sphere>
     <a-light type="spot" color="white" position="5 7.5 0"></a-light>
 
-    <a-sky color="#000"></a-sky>
+    <a-entity sky-gradient="colors: #cccccc"></a-entity>
+    <!--<a-sky color="#000"></a-sky>-->
   </a-scene>
 
-</body>a
+</body>
 </html>
