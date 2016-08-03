@@ -1,0 +1,6 @@
+{
+  "name": "Genesis",
+  "tagline": "Create your world",
+  "body": "### GENESIS\r\nGENESIS is a decision-driven game that lets you form a world based on the decisions you make as a divine entity. The web app and VR app are still under development, but if you want a preview of the game feel free to check out the CLI version I threw together as a template.\r\n\r\n### Authors and Contributors\r\nDevelopment, VR/Web: @harrisonlingren, @ohmfox\r\nStory - [Michael Pollock](mailto:mikybee93@gmail.com), [AJ Edelbrock](aje14700@gmail.com)\r\n\r\n### Support or Contact\r\nCreate an issue on our repository, or contact the developers directly.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
