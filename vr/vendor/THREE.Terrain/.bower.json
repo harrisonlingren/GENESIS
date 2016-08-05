@@ -1,0 +1,19 @@
+{
+  "name": "THREE.Terrain",
+  "version": "1.4.0",
+  "main": "build/THREE.Terrain.min.js",
+  "ignore": [
+    "node_modules"
+  ],
+  "homepage": "https://github.com/IceCreamYou/THREE.Terrain",
+  "_release": "1.4.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.4.0",
+    "commit": "2212c67cc34e0dd78e2c2ab276dcfe2492d3f749"
+  },
+  "_source": "https://github.com/IceCreamYou/THREE.Terrain.git",
+  "_target": "^1.4.0",
+  "_originalSource": "THREE.Terrain",
+  "_direct": true
+}
