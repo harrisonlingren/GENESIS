@@ -5,7 +5,7 @@ AFRAME.registerComponent('terrain', {
   schema: {frequency: {default: 2.5}},
   init: function () {
     this.terrainScene = THREE.Terrain({
-      //easing: THREE.Terrain.Linear,
+      easing: THREE.Terrain.Linear,
       frequency: this.data.frequency,
       heightmap: THREE.Terrain.DiamondSquare,
       material: new THREE.MeshBasicMaterial({color: 0x5566aa}),
