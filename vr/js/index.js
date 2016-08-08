@@ -1,7 +1,7 @@
 // Test Procedural Terrain
 // THREE.terrain by IceCreamYou (https://github.com/IceCreamYou/THREE.Terrain)
 
-AFRAME.registerComponent('terrain', {
+AFRAME.registerComponent('terrainScene', {
   schema: {frequency: {default: 2.5}},
   init: function () {
     this.terrainScene = THREE.Terrain({
