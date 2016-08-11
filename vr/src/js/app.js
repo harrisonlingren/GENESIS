@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom';
 import Camera from './components/Camera';
 import Cursor from './components/Cursor';
 import Sky from './components/Sky';
+import Terrain from './components/Terrain';
 
 class BoilerplateScene extends React.Component {
   constructor(props) {
@@ -30,15 +31,11 @@ class BoilerplateScene extends React.Component {
 
         <Sky/>
 
-        <Entity light={{type: 'ambient', color: '#888'}}/>
-        <Entity light={{type: 'directional', intensity: 0.5}} position={[-1, 1, 0]}/>
-        <Entity light={{type: 'directional', intensity: 1}} position={[1, 1, 0]}/>
+        <Entity light={{type: 'spot', color: '#472D10', intensity: 1}} position='-0.5 10 0'/>
+        <Entity light={{type: 'spot', color: '#472D10', intensity: 0.4}} position='0 20 5'/>
+        <Entity light={{type: 'spot', color: '#472D10', intensity: 0.2}} position='5 20 0'/>
 
-        <Entity geometry="primitive: box" material={{color: this.state.color}}
-                onClick={this.changeColor}
-                position="0 0 -5">
-          <Animation attribute="rotation" dur="5000" repeat="indefinite" to="0 360 360"/>
-        </Entity>
+        <Entity geometry='primitive: box' material={{color: 'red'}}/>
       </Scene>
     );
   }
