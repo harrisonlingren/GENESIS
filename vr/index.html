@@ -18,7 +18,7 @@
 
     <!--<a-image position="0 5 -5" src="logo.png" scale="6 4 2" look-at="[camera]"></a-image>-->
     <a-image position="8 2.15 4.2" src="logo.png" scale="2 1 .25" look-at="[camera]"></a-image>
-    <a-collada-model src="#mountain" position="0 -20 0"></a-collada-model>
+    <a-collada-model src="#mountain" position="0 -10 0"></a-collada-model>
 
     <a-entity position="0 1.8 5">
       <a-entity camera look-controls></a-entity>
@@ -29,7 +29,9 @@
     <a-entity terrain></a-entity>
 
     <!--Sun-->
-    <a-light type="spot" color="#472D10" position="-0.5 0 0"></a-light>
+    <a-light type="spot" color="#472D10" position="-0.5 10 0"></a-light>
+    <a-light type="spot" color="#472D10" position="0 20 5"></a-light>
+    <a-light type="spot" color="#472D10" position="5 20 0"></a-light>
     <a-entity geometry="primitive: sphere; radius: 50;" material="shader: sky-shader; side:double; luminance: 1.1;  turbidity: 2; sunPosition: 0.5, 0, 0;"></a-sphere>
   </a-scene>
 
