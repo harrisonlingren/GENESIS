@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>A-frame test</title>
+  <script src="vendor/three.js/three.min.js"></script>
+  <script src="vendor/THREE.Terrain/build/THREE.Terrain.min.js"></script>
+  <script src="vendor/aframe/dist/aframe-v0.2.0.min.js"></script>
+  <script src="js/aframe-sky-gradient.js"></script>
+  <script src="js/aframe-sky.js"></script>
+</head>
+
+<body>
+  <a-scene fog="type: linear; color: #AAA">
+    <a-assets>
+      <a-asset-item id="mountain" src="assets/mountain/obj.dae"></a-asset-item>
+    </a-assets>
+
+    <!--<a-image position="0 5 -5" src="logo.png" scale="6 4 2" look-at="[camera]"></a-image>-->
+    <a-image position="8 2.15 4.2" src="logo.png" scale="2 1 .25" look-at="[camera]"></a-image>
+    <a-collada-model src="#mountain" position="0 -10 0"></a-collada-model>
+
+    <a-entity position="0 1.8 5">
+      <a-entity camera look-controls></a-entity>
+    </a-entity>
+
+    <!-- Test Procedural Terrain -->
+    <!-- THREE.terrain by IceCreamYou (https://github.com/IceCreamYou/THREE.Terrain)-->
+    <a-entity terrain></a-entity>
+
+    <!--Sun-->
+    <a-light type="spot" color="#472D10" position="-0.5 10 0"></a-light>
+    <a-light type="spot" color="#472D10" position="0 20 5"></a-light>
+    <a-light type="spot" color="#472D10" position="5 20 0"></a-light>
+    <a-entity geometry="primitive: sphere; radius: 50;" material="shader: sky-shader; side:double; luminance: 1.1;  turbidity: 2; sunPosition: 0.5, 0, 0;"></a-sphere>
+  </a-scene>
+
+  <script src="js/index.js"></script>
+</body>
+</html>
