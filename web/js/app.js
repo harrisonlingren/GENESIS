@@ -1,1 +1,1 @@
-// Main scripting will go here. Using ES6
+// Main scripting will go here [using ES6/babel]
