@@ -1,24 +1,55 @@
 // Main scripting will go here [using ES6/babel]
 
-let option1 = {id:0,text:"testOption0"};
-let option2 = {id:1,text:"testOption1"};
-let option3 = {id:2,text:"This is some longer text so I can see what it will do in this situation...."};
-let o = [option1,option2,option3];
+let story = $.getJSON('./story.json');
+_.map(days, story['days']);
+
+var choices = [];
+
+function createButtons(options) {
+  if ( $(#optionButton0).length = 0 ) {
+    for (var i=0; i<options.length; i++) {
+      var newButton = '<button class="btn btn-lg option" id="optionButton'+i+'">'+options[i].text+'</button>';
+      $('.btn-container').append(newButton);
+    }
+  } else {
+    $(#optionButton0).html(options[0].text);
+    $(#optionButton1).html(options[1].text);
+    $(#optionButton2).html(options[2].text);
+  }
+}
+
+
+// REFACTOR: Can't wait for response using this technique...
+
+function startGame() {
+  var dayIndex = 0;
+  do {
+    // get questions for current day
+    _.map(questions, days[dayIndex]['questions']);
+    _.forEach(questions, (question) => {
+      // get options for current question
+      _.map(options, question['options']);
+
+      // print question to prompt tag and update option buttons
+      $(#prompt).html(question.phrase.toString());
+      createButtons(options);
+    });
+
+
+  } while (dayIndex < 6);
+}
+
+
+
+
+
+// ---------------------------------------------------------
+// Animation & Events
 
 var colorRed = '#9C3C1A';
 var colorGreen = '#68B731';
 var colorBlue = '#293AA8';
 var currentColor = '#000000';
-
-var choices = [];
-
-function createButtons(options) {
-  for (var i=0; i<options.length; i++) {
-    var newButton = '<button class="btn btn-lg option" id="optionButton'+i+'">'+options[i].text+'</button>';
-    $('.btn-container').append(newButton);
-  }
-}
-createButtons(o);
 
 function updateColors(c) {
   currentColor = $.xcolor.average(currentColor, c);

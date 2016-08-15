@@ -21,6 +21,7 @@
     "less": "^2.7.1",
     "babel": "^5.8.38",
     "jquery-color": "^2.1.2",
-    "xcolor": "https://github.com/infusion/jQuery-xcolor.git#^1.8.0"
+    "xcolor": "https://github.com/infusion/jQuery-xcolor.git#^1.8.0",
+    "lodash": "^4.15.0"
   }
 }
