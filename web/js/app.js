@@ -1,7 +1,16 @@
 // Main scripting will go here [using ES6/babel]
 
 let story = $.getJSON('./story.json');
+
 _.map(days, story['days']);
+
+/*  schema for data:
+      day objects:      story['days']
+      header text:      story['days']['head'];
+      question objecs:  story['days']['questions'];
+      question prompts: story['days']['questions']['phrases'];
+      question options: story['days']['questions']['options'];
+      option responses: story['days']['questions']['options']['responses'] */
 
 var choices = [];
 
