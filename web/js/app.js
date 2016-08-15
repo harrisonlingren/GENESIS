@@ -1,20 +1,51 @@
 // Main scripting will go here [using ES6/babel]
 
-let story = $.getJSON('./story.json');
+var story = {};
 
-_.map(days, story['days']);
+let xmlhttp = new XMLHttpRequest();
+let url = 'js/story.json';
+xmlhttp.onreadystatechange = () => {
+  if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    story = JSON.parse(xmlhttp.responseText);
+    console.log("Successfully loaded story data: " + xmlhttp.status);
+    console.log(story);
+
+    // map data
+    for (var i=0; i<story.days.length; i++) {
+      console.log('DAY '+(i+1)+': '+story.days[i].head)
+      for (var n=0; n<story.days[i].questions.length; n++) {
+        console.log('  Question #'+n+': '+story.days[i].questions[n].phrase);
+        for (var o=0; o<story.days[i].questions[n].options.length; o++) {
+          console.log('      Option #'+o+': '+story.days[i].questions[n].options[o].text);
+        }
+        //console.log(story.days[n].questions.options.responses)
+      }
+    }
+
+  } else {
+    console.log("Could not GET story data: " + xmlhttp.status);
+    story = {};
+  }
+}
+
+xmlhttp.open('GET', url, true);
+xmlhttp.send();
+
+var days = [];
+
+
 
 /*  schema for data:
-      day objects:      story['days']
-      header text:      story['days']['head'];
-      question objecs:  story['days']['questions'];
-      question prompts: story['days']['questions']['phrases'];
-      question options: story['days']['questions']['options'];
-      option responses: story['days']['questions']['options']['responses'] */
+      day objects:      story.days
+      header text:      story.days[n].head;
+      question objecs:  story.days[n].questions;
+      question prompts: story.days[n].questions.phrases;
+      question options: story.days[n].questions.options;
+      option responses: story.days[n].questions.options.responses */
 
 var choices = [];
 
-function createButtons(options) {
+function updateText(options) {
   // if buttons exist, create them...
   if ( $('.option').length == 0 ) {
 
@@ -29,11 +60,14 @@ function createButtons(options) {
   // ...otherwise update them
   } else {
 
-    .forEach($('.option'), (i, element) =>{
+    _.forEach($('.option'), (i, element) => {
       element.html(options[i].text);
     });
 
   }
+
+  $('#prompt').html(/*  */)
+
 }
 
 
@@ -48,8 +82,8 @@ function startGame() {
       _.map(options, question['options']);
 
       // print question to prompt tag and update option buttons
-      $(#prompt).html(question.phrase.toString());
-      createButtons(options);
+      $('#prompt').html(question.phrase.toString());
+      updateText(options);
     });
 
     dayIndex++;
