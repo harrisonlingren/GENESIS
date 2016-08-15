@@ -37,10 +37,13 @@ body {
   font-size: 20px;
 }
 
-.option-hover {
-  border-color: transparent;
-  background-color: currentColor;
-  color: #29F3A5;
+.option:hover, .option:active {
+  background-color: #FFF;
+  &.red { background-color: #9C3C1A; }
+  &.blue { background-color: #68B731; }
+  &.green { background-color: #293AA8; }
+  color: currentColor;
+  transition: background-color 200ms ease-in, color 200ms ease-in;
 }
 
 .btn-container {

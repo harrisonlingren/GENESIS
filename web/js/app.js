@@ -6,21 +6,29 @@ _.map(days, story['days']);
 var choices = [];
 
 function createButtons(options) {
-  if ( $(#optionButton0).length = 0 ) {
+  // if buttons exist, create them...
+  if ( $('.option').length == 0 ) {
+
     for (var i=0; i<options.length; i++) {
       var newButton = '<button class="btn btn-lg option" id="optionButton'+i+'">'+options[i].text+'</button>';
       $('.btn-container').append(newButton);
     }
+    $('#optionButton0').addClass('red');
+    $('#optionButton1').addClass('green');
+    $('#optionButton2').addClass('blue');
+
+  // ...otherwise update them
   } else {
-    $(#optionButton0).html(options[0].text);
-    $(#optionButton1).html(options[1].text);
-    $(#optionButton2).html(options[2].text);
+
+    .forEach($('.option'), (i, element) =>{
+      element.html(options[i].text);
+    });
+
   }
 }
 
 
-// REFACTOR: Can't wait for response using this technique...
-
+// REFACTOR: Not possible to wait for response using this technique...
 function startGame() {
   var dayIndex = 0;
   do {
@@ -35,7 +43,7 @@ function startGame() {
       createButtons(options);
     });
 
-
+    dayIndex++;
   } while (dayIndex < 6);
 }
 
@@ -57,7 +65,6 @@ function updateColors(c) {
     backgroundColor: currentColor
   }, 500);
   console.log("Switched to color: " + currentColor);
-
   console.log(choices);
 }
 
@@ -78,12 +85,4 @@ $('#optionButton1').click(() => {
 $('#optionButton2').click(() => {
   updateColors(colorBlue);
   record(2);
-});
-
-$('.option').on('mouseenter', () => {
-
-});
-
-$('.option').on('mouseleave', () => {
-
 });
