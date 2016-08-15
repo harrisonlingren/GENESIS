@@ -37,11 +37,11 @@ var days = [];
 
 /*  schema for data:
       day objects:      story.days
-      header text:      story.days[n].head;
-      question objecs:  story.days[n].questions;
-      question prompts: story.days[n].questions.phrases;
-      question options: story.days[n].questions.options;
-      option responses: story.days[n].questions.options.responses */
+      header text:      story.days[x].head;
+      question objecs:  story.days[x].questions;
+      question prompts: story.days[x].questions[y].phrases;
+      question options: story.days[x].questions[y].options;
+      option responses: story.days[x].questions[y].options[z].responses */
 
 var choices = [];
 
