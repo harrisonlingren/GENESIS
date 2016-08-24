@@ -1,11 +1,20 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
 
-# dependencies
-node_modules
+# Folder config file
+Desktop.ini
 
-# production
-build
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
 
-# misc
-.DS_Store
-npm-debug.log
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+js/vendor/*

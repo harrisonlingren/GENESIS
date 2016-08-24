@@ -1,0 +1,84 @@
+// CSS will eventually go here...
+
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  color: #FFF;
+  margin: 0;
+}
+
+.title {
+  display: block;
+  margin: 15px auto 25px auto;
+
+  h1 {
+    text-align: center;
+    font-size: 72px;
+    font-style: oblique;
+    color: currentColor;
+  }
+}
+
+.btn {
+  background-color: transparent;
+  border-style: solid;
+  border-width: 2px;
+  border-color: currentColor;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 5px;
+  color: currentColor;
+  font-size: 20px;
+}
+
+.option:hover, .option:active {
+  background-color: #FFF;
+  &.red { background-color: #9C3C1A; }
+  &.blue { background-color: #68B731; }
+  &.green { background-color: #293AA8; }
+  color: currentColor;
+  transition: background-color 200ms ease-in, color 200ms ease-in;
+}
+
+.btn-container {
+  margin: 30px auto 15px auto;
+  text-align: center;
+  display: block;
+  width: 80%;
+  .option {
+    margin: 5px 30px;
+    padding: 10px 40px;
+    width: 85%;
+    max-width: 600px;
+  }
+}
+
+.game-container {
+  width: 90%;
+  min-width: 650px;
+  margin: 0 auto;
+  display: block;
+  hr {
+    border-color: currentColor;
+    border-width: thin;
+    border-style: solid;
+    width: 95%;
+  }
+  #prompt {
+    font-style: italic;
+    font-size: 32;
+    margin: 15px 30px 30px 30px;
+  }
+}
+
+.pane {
+  background-color: fade(white, 25%);
+  padding: 15px;
+  border-radius: 10px;
+}
