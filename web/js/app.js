@@ -15,16 +15,16 @@ xmlhttp.onreadystatechange = () => {
       console.log('DAY '+(i+1)+': '+story.days[i].head)
       for (var n=0; n<story.days[i].questions.length; n++) {
         console.log('  Question #'+n+': '+story.days[i].questions[n].phrase);
-        for (var o=0; o<story.days[i].questions[n].options.length; o++) {
-          console.log('      Option #'+o+': '+story.days[i].questions[n].options[o].text);
-        }
+        //for (var o=0; o<story.days[i].questions[n].options.length; o++) {
+          //console.log('      Option #'+o+': '+story.days[i].questions[n].options[o].text);
+        //}
         //console.log(story.days[n].questions.options.responses)
       }
     }
 
   } else {
     console.log("Could not GET story data: " + xmlhttp.status);
-    story = {};
+    //story = {};
   }
 }
 
